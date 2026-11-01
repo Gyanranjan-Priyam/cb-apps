@@ -1,0 +1,21 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /login
+Disallow: /onboarding
+Disallow: /verify-request
+Disallow: /_next/
+Disallow: /auth/
+
+# Allow public pages (homepage routes have been removed)
+Allow: /
+Allow: /privacy
+Allow: /terms
+
+# Sitemap location
+Sitemap: https://www.codebreakersgcek.tech/sitemap.xml

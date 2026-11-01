@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.9828 0.0045 78.2983);
+  --foreground: oklch(0.2300 0.0038 106.6929);
+  --card: oklch(1.0000 0 0);
+  --card-foreground: oklch(0.2300 0.0038 106.6929);
+  --popover: oklch(1.0000 0 0);
+  --popover-foreground: oklch(0.2300 0.0038 106.6929);
+  --primary: oklch(0.6724 0.1308 38.7559);
+  --primary-foreground: oklch(1.0000 0 0);
+  --secondary: oklch(0.9548 0.0054 95.1008);
+  --secondary-foreground: oklch(0.2300 0.0038 106.6929);
+  --muted: oklch(0.9646 0.0057 84.5663);
+  --muted-foreground: oklch(0.5278 0 0);
+  --accent: oklch(0.9228 0.0075 80.7204);
+  --accent-foreground: oklch(0.2300 0.0038 106.6929);
+  --destructive: oklch(0.6256 0.1933 23.0261);
+  --destructive-foreground: oklch(1.0000 0 0);
+  --border: oklch(0.9129 0.0112 89.7277);
+  --input: oklch(0.9129 0.0112 89.7277);
+  --ring: oklch(0.6724 0.1308 38.7559);
+  --chart-1: oklch(0.6724 0.1308 38.7559);
+  --chart-2: oklch(0.4165 0 0);
+  --chart-3: oklch(0.7252 0 0);
+  --chart-4: oklch(0.9228 0.0075 80.7204);
+  --chart-5: oklch(0.9548 0.0054 95.1008);
+  --sidebar: oklch(0.9646 0.0057 84.5663);
+  --sidebar-foreground: oklch(0.2300 0.0038 106.6929);
+  --sidebar-primary: oklch(0.6724 0.1308 38.7559);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.9228 0.0075 80.7204);
+  --sidebar-accent-foreground: oklch(0.2300 0.0038 106.6929);
+  --sidebar-border: oklch(0.9129 0.0112 89.7277);
+  --sidebar-ring: oklch(0.6724 0.1308 38.7559);
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: Charter, Georgia, serif;
+  --font-mono: JetBrains Mono, monospace;
+  --radius: 0.6rem;
+  --shadow-x: 0;
+  --shadow-y: 1px;
+  --shadow-blur: 10px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.04;
+  --shadow-color: #000000;
+  --shadow-2xs: 0px 2px 10px 0px hsl(0 0% 0% / 0.02);
+  --shadow-xs: 0px 2px 10px 0px hsl(0 0% 0% / 0.02);
+  --shadow-sm: 0px 2px 10px 0px hsl(0 0% 0% / 0.04), 0px 1px 2px -1px hsl(0 0% 0% / 0.04);
+  --shadow: 0px 2px 10px 0px hsl(0 0% 0% / 0.04), 0px 1px 2px -1px hsl(0 0% 0% / 0.04);
+  --shadow-md: 0px 2px 10px 0px hsl(0 0% 0% / 0.04), 0px 2px 4px -1px hsl(0 0% 0% / 0.04);
+  --shadow-lg: 0px 2px 10px 0px hsl(0 0% 0% / 0.04), 0px 4px 6px -1px hsl(0 0% 0% / 0.04);
+  --shadow-xl: 0px 2px 10px 0px hsl(0 0% 0% / 0.04), 0px 8px 10px -1px hsl(0 0% 0% / 0.04);
+  --shadow-2xl: 0px 2px 10px 0px hsl(0 0% 0% / 0.10);
+  --tracking-normal: -0.01em;
+  --spacing: 0.25rem;
+
+  /* Safe area insets for mobile devices */
+  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --safe-area-inset-right: env(safe-area-inset-right, 0px);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-inset-left: env(safe-area-inset-left, 0px);
+
+  /* Keyboard height (dynamically set by Capacitor) */
+  --keyboard-height: 0px;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 2px;
+  --letter-spacing: -0.01em;
+}
+
+.dark {
+  --background: oklch(0.2228 0.0025 67.6992);
+  --foreground: oklch(0.8671 0.0029 84.5601);
+  --card: oklch(0.2527 0.0024 67.7173);
+  --card-foreground: oklch(0.8671 0.0029 84.5601);
+  --popover: oklch(0.2527 0.0024 67.7173);
+  --popover-foreground: oklch(0.8671 0.0029 84.5601);
+  --primary: oklch(0.6724 0.1308 38.7559);
+  --primary-foreground: oklch(1.0000 0 0);
+  --secondary: oklch(0.2734 0.0023 67.7272);
+  --secondary-foreground: oklch(0.8671 0.0029 84.5601);
+  --muted: oklch(0.2734 0.0023 67.7272);
+  --muted-foreground: oklch(0.6544 0.0038 67.7585);
+  --accent: oklch(0.2938 0.0023 67.7355);
+  --accent-foreground: oklch(0.9128 0 0);
+  --destructive: oklch(0.4711 0.1390 24.1690);
+  --destructive-foreground: oklch(0.9646 0.0057 84.5663);
+  --border: oklch(0.3098 0.0023 67.7411);
+  --input: oklch(0.3098 0.0023 67.7411);
+  --ring: oklch(0.6724 0.1308 38.7559);
+  --chart-1: oklch(0.6724 0.1308 38.7559);
+  --chart-2: oklch(0.6544 0.0038 67.7585);
+  --chart-3: oklch(0.4715 0.0034 84.5693);
+  --chart-4: oklch(0.3098 0.0023 67.7411);
+  --chart-5: oklch(0.2734 0.0023 67.7272);
+  --sidebar: oklch(0.2054 0.0025 67.6857);
+  --sidebar-foreground: oklch(0.8671 0.0029 84.5601);
+  --sidebar-primary: oklch(0.6724 0.1308 38.7559);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.2734 0.0023 67.7272);
+  --sidebar-accent-foreground: oklch(0.9128 0 0);
+  --sidebar-border: oklch(0.3098 0.0023 67.7411);
+  --sidebar-ring: oklch(0.6724 0.1308 38.7559);
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: Charter, Georgia, serif;
+  --font-mono: JetBrains Mono, monospace;
+  --radius: 0.6rem;
+  --shadow-x: 0;
+  --shadow-y: 1px;
+  --shadow-blur: 12px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.2;
+  --shadow-color: #000000;
+  --shadow-2xs: 0px 4px 12px 0px hsl(0 0% 0% / 0.10);
+  --shadow-xs: 0px 4px 12px 0px hsl(0 0% 0% / 0.10);
+  --shadow-sm: 0px 4px 12px 0px hsl(0 0% 0% / 0.20), 0px 1px 2px -1px hsl(0 0% 0% / 0.20);
+  --shadow: 0px 4px 12px 0px hsl(0 0% 0% / 0.20), 0px 1px 2px -1px hsl(0 0% 0% / 0.20);
+  --shadow-md: 0px 4px 12px 0px hsl(0 0% 0% / 0.20), 0px 2px 4px -1px hsl(0 0% 0% / 0.20);
+  --shadow-lg: 0px 4px 12px 0px hsl(0 0% 0% / 0.20), 0px 4px 6px -1px hsl(0 0% 0% / 0.20);
+  --shadow-xl: 0px 4px 12px 0px hsl(0 0% 0% / 0.20), 0px 8px 10px -1px hsl(0 0% 0% / 0.20);
+  --shadow-2xl: 0px 4px 12px 0px hsl(0 0% 0% / 0.50);
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 4px;
+  --letter-spacing: -0.01em;
+  --spacing: 0.25rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, monospace;
+  --font-serif: Charter, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --radius: 0.6rem;
+  --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+  --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+  --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+  --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  --tracking-normal: var(--tracking-normal);
+  --spacing: var(--spacing);
+  --letter-spacing: var(--letter-spacing);
+  --shadow-offset-y: var(--shadow-offset-y);
+  --shadow-offset-x: var(--shadow-offset-x);
+  --shadow-spread: var(--shadow-spread);
+  --shadow-blur: var(--shadow-blur);
+  --shadow-opacity: var(--shadow-opacity);
+  --color-shadow-color: var(--shadow-color);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    letter-spacing: var(--tracking-normal);
+  }
+
+  /* Mobile-specific styles for Capacitor */
+  body.capacitor {
+    /* Add padding for safe areas */
+    padding-top: var(--safe-area-inset-top);
+    padding-right: var(--safe-area-inset-right);
+    padding-bottom: var(--safe-area-inset-bottom);
+    padding-left: var(--safe-area-inset-left);
+
+    /* Prevent overscroll/bounce effect */
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+
+    /* Ensure full height on mobile */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* iOS-specific adjustments */
+  body.platform-ios {
+    /* iOS status bar is typically 44px (20px status + 24px notch on iPhone X+) */
+    --status-bar-height: 44px;
+  }
+
+  /* Android-specific adjustments */
+  body.platform-android {
+    /* Android status bar is typically 24px */
+    --status-bar-height: 24px;
+  }
+
+  /* Prevent text selection on mobile for better UX */
+  body.capacitor * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  /* Allow text selection for input elements */
+  body.capacitor input,
+  body.capacitor textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+/* TipTap Editor List Styles */
+.ProseMirror {
+  outline: none;
+}
+
+.ProseMirror .my-bullet-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.ProseMirror .my-ordered-list {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.ProseMirror .my-list-item {
+  margin: 0.25rem 0;
+  padding: 0.1rem 0;
+  line-height: 1.5;
+}
+
+.ProseMirror .my-bullet-list .my-list-item::marker,
+.ProseMirror .my-ordered-list .my-list-item::marker {
+  color: hsl(var(--foreground));
+}
+
+/* Nested lists */
+.ProseMirror .my-bullet-list .my-bullet-list,
+.ProseMirror .my-ordered-list .my-ordered-list,
+.ProseMirror .my-bullet-list .my-ordered-list,
+.ProseMirror .my-ordered-list .my-bullet-list {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Ensure proper spacing between list items */
+.ProseMirror .my-list-item p {
+  margin: 0;
+  padding: 0;
+}
+
+/* List item focus styles */
+.ProseMirror .my-list-item:focus {
+  outline: 1px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* TipTap Content Rendering Styles */
+.tiptap-content ul {
+  list-style-type: disc !important;
+  margin-left: 1.25rem !important;
+  margin-bottom: 1rem !important;
+  padding-left: 0 !important;
+}
+
+.tiptap-content ol {
+  list-style-type: decimal !important;
+  margin-left: 1.25rem !important;
+  margin-bottom: 1rem !important;
+  padding-left: 0 !important;
+}
+
+.tiptap-content li {
+  margin: 0.25rem 0 !important;
+  padding-left: 0.25rem !important;
+  line-height: 1.6 !important;
+}
+
+.tiptap-content li p {
+  margin: 0 !important;
+  display: inline !important;
+}
+
+/* Specific classes for our list configuration */
+.prose-bullet-list {
+  list-style-type: disc !important;
+  margin: 1rem 0 !important;
+  padding-left: 1.5rem !important;
+}
+
+.prose-ordered-list {
+  list-style-type: decimal !important;
+  margin: 1rem 0 !important;
+  padding-left: 1.5rem !important;
+}
+
+/* Override prose styles that might interfere */
+.prose .tiptap-content ul,
+.prose .tiptap-content ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose .tiptap-content li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Dark mode support */
+.dark .tiptap-content ul li::marker,
+.dark .tiptap-content ol li::marker {
+  color: hsl(var(--foreground));
+}
+
+/* Utility to hide scrollbar while maintaining scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* ========================================================================== */
+/* NEO-BRUTALISM SONNER TOAST (For Public Member Profile Page)                */
+/* ========================================================================== */
+body:has([data-neo-page]) [data-sonner-toaster] [data-sonner-toast],
+body:has(.font-neo) [data-sonner-toaster] [data-sonner-toast] {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  border: 3px solid #000000 !important;
+  border-radius: 0px !important;
+  box-shadow: 5px 5px 0px 0px #000000 !important;
+  padding: 14px 18px !important;
+  color: #000000 !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast][data-type="success"],
+body:has(.font-neo) [data-sonner-toast][data-type="success"] {
+  background: #6EE7B7 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast][data-type="error"],
+body:has(.font-neo) [data-sonner-toast][data-type="error"] {
+  background: #FF6B6B !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast][data-type="warning"],
+body:has(.font-neo) [data-sonner-toast][data-type="warning"] {
+  background: #FFD93D !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast][data-type="info"],
+body:has(.font-neo) [data-sonner-toast][data-type="info"] {
+  background: #93C5FD !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast][data-type="default"],
+body:has(.font-neo) [data-sonner-toast][data-type="default"] {
+  background: #FFFDF5 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* Title */
+body:has([data-neo-page]) [data-sonner-toast] [data-title],
+body:has(.font-neo) [data-sonner-toast] [data-title] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #000000 !important;
+}
+
+/* Description */
+body:has([data-neo-page]) [data-sonner-toast] [data-description],
+body:has(.font-neo) [data-sonner-toast] [data-description] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  color: #000000 !important;
+  opacity: 0.95 !important;
+  margin-top: 4px !important;
+}
+
+/* Icon */
+body:has([data-neo-page]) [data-sonner-toast] [data-icon],
+body:has(.font-neo) [data-sonner-toast] [data-icon] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast] [data-icon] svg,
+body:has(.font-neo) [data-sonner-toast] [data-icon] svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast] [data-icon] svg circle,
+body:has(.font-neo) [data-sonner-toast] [data-icon] svg circle {
+  fill: #000000 !important;
+  stroke: #000000 !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast] [data-icon] svg path,
+body:has([data-neo-page]) [data-sonner-toast] [data-icon] svg polyline,
+body:has([data-neo-page]) [data-sonner-toast] [data-icon] svg line,
+body:has(.font-neo) [data-sonner-toast] [data-icon] svg path,
+body:has(.font-neo) [data-sonner-toast] [data-icon] svg polyline,
+body:has(.font-neo) [data-sonner-toast] [data-icon] svg line {
+  stroke: #FFFFFF !important;
+  stroke-width: 2.5px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  fill: none !important;
+}
+
+/* Close Button */
+body:has([data-neo-page]) [data-sonner-toast] [data-close-button],
+body:has(.font-neo) [data-sonner-toast] [data-close-button] {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  left: auto !important;
+  border: 2px solid #000000 !important;
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  border-radius: 0px !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Action Button */
+body:has([data-neo-page]) [data-sonner-toast] [data-button],
+body:has(.font-neo) [data-sonner-toast] [data-button] {
+  border: 2px solid #000000 !important;
+  box-shadow: 3px 3px 0px 0px #000000 !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 11px !important;
+  border-radius: 0px !important;
+  background: #FFD93D !important;
+  color: #000000 !important;
+  padding: 6px 14px !important;
+  cursor: pointer !important;
+  transition: transform 0.1s ease !important;
+}
+
+body:has([data-neo-page]) [data-sonner-toast] [data-button]:hover,
+body:has(.font-neo) [data-sonner-toast] [data-button]:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px 0px #000000 !important;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
